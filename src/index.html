@@ -4,14 +4,19 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
         <title>Weather App</title>
     </head>
     <body>
         <main>
-            <h1 class="componentcheck">Weather App</h1>
+            <header>
+                <h1>Weather App</h1>
+            </header>
             <form class="form" action="#" method="POST">
                 <input class="input" type="text" name="address" placeholder="Enter your city" />
-                <button>Get Weather</button>
+                <button class="btn submit">Get Weather</button>
             </form>
             <div class="weather-output"></div>
         </main>

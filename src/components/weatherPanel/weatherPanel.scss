@@ -1,3 +1,18 @@
-.componentcheck {
-    color: blue;
+main {
+    display: grid;
+    justify-items: center;
+    padding-top: 1rem;
+}
+
+.input {
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.input:focus {
+    outline: 1px solid var(--primary-color);
 }
