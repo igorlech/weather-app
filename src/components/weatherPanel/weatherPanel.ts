@@ -10,20 +10,22 @@ export class weatherPanel {
         const input = document.querySelector<HTMLInputElement>('.input');
         const form = document.querySelector<HTMLFormElement>('.form');
 
+        const API_KEY = 'testKey';
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
             if (input?.value == '' || input?.value == null) return;
 
-            this.fetchWeatherData(input.value);
+            this.fetchWeatherData(input.value, API_KEY);
         });
     }
 
     // TODO: Make fetch async
-    // TODO: Check for better API, current is missing data for some cities
-    // in case of error, display error message
-    fetchWeatherData(city: string) {
-        fetch(`https://goweather.herokuapp.com/weather/${city}`)
+    // TODO: Check if the new API is working + secure the key
+
+    fetchWeatherData(city: string, key: string) {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
             .then((response) => response.json())
             .then((data) => this.renderWeatherData(data as MyData));
     }
