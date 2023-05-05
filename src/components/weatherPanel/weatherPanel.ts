@@ -1,5 +1,6 @@
 import './weatherPanel.scss';
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 interface MyData {
     temperature: string;
     wind: string;
@@ -10,7 +11,7 @@ export class weatherPanel {
         const input = document.querySelector<HTMLInputElement>('.input');
         const form = document.querySelector<HTMLFormElement>('.form');
 
-        const API_KEY = 'testKey';
+        const API_KEY: string = process.env.WEATHER_API_KEY;
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -22,7 +23,7 @@ export class weatherPanel {
     }
 
     // TODO: Make fetch async
-    // TODO: Check if the new API is working + secure the key
+    // TODO: Check if the new API is working
 
     fetchWeatherData(city: string, key: string) {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
