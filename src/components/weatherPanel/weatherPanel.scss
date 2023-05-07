@@ -9,21 +9,29 @@ header {
 }
 
 .weather-icon {
-    width: 50px;
     position: absolute;
+    width: 50px;
     right: 0;
     transform: translate(35px, -12px);
 }
 
 .input {
     height: 50px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    padding: 0 10px;
-    font-size: 20px;
-    margin-bottom: 20px;
+
+    &:focus {
+        outline: 1px solid var(--primary-color);
+    }
 }
 
-.input:focus {
-    outline: 1px solid var(--primary-color);
+.weather-output {
+    display: none;
+    padding: 2rem;
+    border: 1px solid var(--primary-color);
+    background-color: white;
 }
