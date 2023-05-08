@@ -27,25 +27,32 @@ export class weatherPanel {
 
         output.innerHTML = '';
 
-        output.innerHTML += `
-        <div class="weather-data">
+        if (data.name == undefined) {
+            return (output.innerHTML = `<p class="error">City not found.</p>`);
+        } else {
+            output.innerHTML += `
+            <div class="weather-data">
             <div class="weather-data-header">
-                <p>${data.name}, ${data.sys.country}</p>
+            <p>${data.name}, ${data.sys.country}</p>
             </div>
-            <div class="weather-data-icon">
-                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather icon">
-            </div>
-            <div class="weather-data-temp">
-                <p>Temperature: ${Math.round(data.main.temp)} °C</p>
-            </div>
-            <div class="weather-data-desc">
-                <p>Main: ${data.weather[0].main} - ${data.weather[0].description}</p>
-            </div>
-            <p>Wind: ${data.wind.speed} m/s</p>
-            <p>Humidity: ${data.main.humidity}</p>
-            <p>Pressure: ${data.main.pressure} hPa</p>
-            <p>Clouds: ${data.clouds.all}%</p>
-            <p>Visibility: ${data.visibility}</p>
-        </div>`;
+                <div class="weather-data-main">
+                    <div class="weather-data-icon">
+                        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather icon">
+                        </div>
+                        <div class="weather-data-temp">
+                        <p class="temperature">${Math.round(data.main.temp)}°C</p>
+                        </div>
+                        <div class="weather-data-desc">
+                        <p class="weather-desc-1">${data.weather[0].main}</p>
+                        <p class="weather-desc-2">${data.weather[0].description}</p>
+                        </div>
+                        <p>Wind: ${data.wind.speed} m/s</p>
+                        <p>Humidity: ${data.main.humidity}</p>
+                        <p>Pressure: ${data.main.pressure} hPa</p>
+                        <p>Clouds: ${data.clouds.all}%</p>
+                        <p>Visibility: ${data.visibility}</p>
+                    </div>
+            </div>`;
+        }
     }
 }
