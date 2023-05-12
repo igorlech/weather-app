@@ -9,10 +9,13 @@ header {
 }
 
 .weather-icon {
-    position: absolute;
     width: 50px;
-    right: 0;
-    transform: translate(35px, -12px);
+
+    &.icon-sun {
+        position: absolute;
+        right: 0;
+        transform: translate(35px, -12px);
+    }
 }
 
 .input {
@@ -71,4 +74,14 @@ header {
     .weather-desc-2 {
         font-size: 1.1rem;
     }
+}
+
+.fav-section {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: flex;
+
+    padding: 1rem;
 }
