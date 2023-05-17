@@ -15,6 +15,17 @@ header {
         position: absolute;
         right: 0;
         transform: translate(35px, -12px);
+
+        @media screen and (max-width: 768px) {
+            transform: translate(40px, -20px);
+        }
+    }
+}
+
+.form {
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -29,6 +40,11 @@ header {
 
     &:focus {
         outline: 1px solid var(--primary-color);
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 15px;
+        margin-bottom: 10px;
     }
 }
 
@@ -84,4 +100,15 @@ header {
     display: flex;
 
     padding: 1rem;
+
+    @media screen and (max-width: 768px) {
+        position: relative;
+        justify-content: center;
+    }
+
+    .fav-icon {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
 }
