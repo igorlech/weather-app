@@ -4,6 +4,8 @@ export class weatherPanel {
     constructor() {
         const input = document.querySelector<HTMLInputElement>('.input');
         const form = document.querySelector<HTMLFormElement>('.form');
+        const favBtn = document.querySelector<HTMLButtonElement>('.fav-btn');
+
         const KEY = '7b14f8b6db935705d052151dbf729640';
 
         form.addEventListener('submit', (e) => {
@@ -12,6 +14,10 @@ export class weatherPanel {
             if (input?.value == '' || input?.value == null) return;
 
             this.fetchWeatherData(input.value, KEY);
+        });
+
+        favBtn?.addEventListener('click', () => {
+            this.showFavourites();
         });
     }
 
@@ -54,5 +60,10 @@ export class weatherPanel {
                     </div>
             </div>`;
         }
+    }
+
+    showFavourites() {
+        // const favPanel = document.querySelector<HTMLDivElement>('.fav-panel');
+        // favPanel?.classList.toggle('show-fav');
     }
 }
