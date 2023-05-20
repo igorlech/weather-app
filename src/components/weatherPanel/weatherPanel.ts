@@ -1,5 +1,5 @@
 import './weatherPanel.scss';
-import { WeatherData } from './interfaces';
+import { WeatherData } from '../../utility/interfaces';
 export class weatherPanel {
     constructor() {
         const input = document.querySelector<HTMLInputElement>('.input');
