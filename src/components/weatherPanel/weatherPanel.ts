@@ -56,7 +56,6 @@ export class weatherPanel {
                         <p>Humidity: ${data.main.humidity}</p>
                         <p>Pressure: ${data.main.pressure} hPa</p>
                         <p>Clouds: ${data.clouds.all}%</p>
-                        <p>Visibility: ${data.visibility}</p>
                     </div>
             </div>`;
         }
