@@ -40,6 +40,7 @@ export class weatherPanel {
             <div class="weather-data">
             <div class="weather-data-header">
             <p>${data.name}, ${data.sys.country}</p>
+            <button class="fav-btn">ADD</button>
             </div>
                 <div class="weather-data-main">
                     <div class="weather-data-icon">
@@ -59,6 +60,22 @@ export class weatherPanel {
                     </div>
             </div>`;
         }
+    }
+
+    saveFavourite(data: WeatherData) {
+        // for future panel? decide how you want to present favourites
+        const favPanel = document.querySelector<HTMLDivElement>('.fav-panel');
+        // button to show favourites
+        const favBtn = document.querySelector<HTMLButtonElement>('.fav-btn');
+        // list of favourites
+        const favList = document.querySelector<HTMLUListElement>('.fav-list');
+        const favItem = document.createElement('li');
+        favItem.classList.add('fav-item');
+        favItem.innerHTML = `<p class="fav-item-name">${data.name}, ${data.sys.country}</p>`;
+        favList?.appendChild(favItem);
+        favBtn?.addEventListener('click', () => {
+            favPanel?.classList.toggle('show-fav');
+        });
     }
 
     showFavourites() {
